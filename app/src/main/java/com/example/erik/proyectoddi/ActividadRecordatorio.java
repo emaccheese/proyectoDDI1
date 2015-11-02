@@ -9,17 +9,23 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ActividadRecordatorio extends AppCompatActivity {
     private Context mContext;
+    //private ImageAdapter imAdapt;
+    public int position = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__recordatorio);
+        //imAdapt = new ImageAdapter(this);
 
         GridView gridView = (GridView) findViewById(R.id.mainGrdiViewRecordatorio);
-        gridView.setAdapter(new ImageAdapter(this));
+        //gridView.setAdapter(imAdapt);
+        gridView.addView(createNewRecordatorio());
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -53,10 +59,14 @@ public class ActividadRecordatorio extends AppCompatActivity {
 
     }
 
-    public Button createNewRecordatorio(){
-        Button boton = new Button(mContext);
-        boton.setLayoutParams(new GridView.LayoutParams(85,85));
-        boton.setText("Ejemplo");
-        return boton;
+    public TextView createNewRecordatorio(){
+        Recordatorio recordatorio = new Recordatorio();
+        LinearLayout.LayoutParams lParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+
+        TextView text = new TextView(this);
+        text.setLayoutParams(lParams);
+        text.setText(recordatorio.getNombre()+"\n"+recordatorio.getFecha());
+        return text;
+
     }
 }
