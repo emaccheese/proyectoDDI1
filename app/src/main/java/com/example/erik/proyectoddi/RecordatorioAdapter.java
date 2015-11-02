@@ -38,6 +38,7 @@ public class RecordatorioAdapter extends BaseAdapter {
         if(convertView == null){
             botonView = new Button(mContext);
 
+
         }else{
             botonView = (Button) convertView;
         }

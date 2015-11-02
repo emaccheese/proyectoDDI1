@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">proyectoDDI</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="boton_radio">Radio</string>
+    <string name="boton_leer">Leer</string>
+    <string name="boton_recordatorio">Recordatorio</string>
+    <string name="title_activity_actividad_leer">Leer</string>
+    <string name="escoje_documento">Elije un documento: </string>
+    <string name="title_activity_actividad_radio">Radio</string>
+    <string name="title_activity_actividad_recordatorio">Recordatorio</string>
+    <string name="boton_regresar">Regresar</string>
+    <string name="boton_pausa">Pausa</string>
+    <string name="boton_play">Play</string>
+    <string name="boton_siguiente">Siguiente</string>
+</resources>
