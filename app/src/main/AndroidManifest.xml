@@ -41,8 +41,8 @@
                 android:value="com.example.erik.proyectoddi.MenuPrincipal" />
         </activity>
         <activity
-            android:name=".DetallesRecordatorio"
-            android:label="@string/title_activity_detalles_recordatorio"
+            android:name=".AgregarRecordatorio"
+            android:label="@string/title_activity_agregar_recordatorio"
             android:parentActivityName=".ActividadRecordatorio" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

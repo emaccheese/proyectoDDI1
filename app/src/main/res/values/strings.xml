@@ -13,7 +13,7 @@
     <string name="boton_pausa">Pausa</string>
     <string name="boton_play">Play</string>
     <string name="boton_siguiente">Siguiente</string>
-    <string name="title_activity_detalles_recordatorio">DetallesRecordatorio</string>
-
+    <string name="title_activity_agregar_recordatorio">agregarRecordatorio</string>
+    <string name="palabraAceptar">Aceptar</string>
     <string name="hello_world">Hello world!</string>
 </resources>
