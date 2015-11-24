@@ -124,7 +124,7 @@ public class MenuPrincipal extends AppCompatActivity {
                         intentActivity(ActividadRecordatorio.class);
 
                     }
-                }, 1000);
+                }, 800);
 
             }
         }
