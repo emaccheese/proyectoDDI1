@@ -1,6 +1,8 @@
 package com.example.erik.proyectoddi;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,30 +11,26 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class ActividadRecordatorio extends AppCompatActivity {
     private Context mContext;
-    //private ImageAdapter imAdapt;
-    public int position = 0;
+    static final int DETALLES_RECORDATORIO_REQUEST = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__recordatorio);
-        //imAdapt = new ImageAdapter(this);
 
         GridView gridView = (GridView) findViewById(R.id.mainGrdiViewRecordatorio);
-        //gridView.setAdapter(imAdapt);
-        gridView.addView(createNewRecordatorio());
 
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        /*gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(ActividadRecordatorio.this, ""+ position, Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
     }
 
@@ -53,20 +51,24 @@ public class ActividadRecordatorio extends AppCompatActivity {
     }
 
     public void agregarRecordatorio(View view){
+        Intent intent = new Intent(this, AgregarRecordatorio.class);
+        startActivityForResult(intent,DETALLES_RECORDATORIO_REQUEST);
 
-        GridView vista = (GridView) findViewById(R.id.mainGrdiViewRecordatorio);
-        vista.addView(createNewRecordatorio());
+        //GridView vista = (GridView) findViewById(R.id.mainGrdiViewRecordatorio);
 
-    }
-
-    public TextView createNewRecordatorio(){
-        Recordatorio recordatorio = new Recordatorio();
-        LinearLayout.LayoutParams lParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-
-        TextView text = new TextView(this);
-        text.setLayoutParams(lParams);
-        text.setText(recordatorio.getNombre()+"\n"+recordatorio.getFecha());
-        return text;
 
     }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == 1) {
+            if(resultCode == Activity.RESULT_OK){
+                String [] informacionRecordatorio=data.getStringArrayExtra(AgregarRecordatorio.INFORMACION_RECORDATORIO);
+            }
+            if (resultCode == Activity.RESULT_CANCELED) {
+                //Write your code if there's no result
+            }
+        }
+    }//onActivityResult
+
 }
