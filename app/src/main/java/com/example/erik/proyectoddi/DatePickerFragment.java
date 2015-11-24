@@ -2,6 +2,7 @@ package com.example.erik.proyectoddi;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.widget.DatePicker;
@@ -15,7 +16,7 @@ import java.util.Calendar;
  */
 public  class DatePickerFragment extends DialogFragment
         implements DatePickerDialog.OnDateSetListener{
-
+        public String fechaEscojida;
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Use the current date as the default date in the picker
@@ -23,14 +24,15 @@ public  class DatePickerFragment extends DialogFragment
         int year = c.get(Calendar.YEAR);
         int month = c.get(Calendar.MONTH);
         int day = c.get(Calendar.DAY_OF_MONTH);
-        int x;
+
         // Create a new instance of DatePickerDialog and return it
         return new DatePickerDialog(getActivity(), this, year, month, day);
     }
 
     public void onDateSet(DatePicker view, int year, int month, int day) {
         // Do something with the date chosen by the user
-
-        view.getDayOfMonth();
+        fechaEscojida = day+"/"+month+"/"+year;
+        ((TextView)getActivity().findViewById(R.id.tvDiaInput)).setText(fechaEscojida);
+        ((TextView)getActivity().findViewById(R.id.tvDiaInput)).setTextColor(Color.BLUE);
     }
 }

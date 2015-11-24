@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:text="Nombre"
-        android:id="@+id/tvNombreRecordatorio"
+        android:id="@+id/tvNombreLabel"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:textStyle="bold|italic"
@@ -24,7 +24,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/etNombre"
+        android:id="@+id/etNombreInput"
         android:layout_below="@+id/tvNombreRecordatorio"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
@@ -38,33 +38,33 @@
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:text="Hora:"
-        android:id="@+id/tvHoraRecordatorio"
+        android:id="@+id/tvHoraLabel"
         android:layout_below="@+id/etNombre"
         android:layout_alignParentStart="true"
         android:textStyle="bold"
         android:textColor="#121111"
         android:paddingBottom="20dp" />
 
-    <TextClock
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textClock"
+        android:id="@+id/tvHoraInput"
         android:layout_gravity="center_horizontal"
         android:textStyle="italic"
         android:textSize="40dp"
         android:textColor="#540d0d0d"
         android:paddingBottom="30dp"
         android:onClick="showTimePickerDialog"
-        android:gravity="center_vertical"
+        android:gravity="center_horizontal"
         android:clickable="true"
-        android:editable="true" />
+        android:editable="false" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Dia"
-        android:id="@+id/tvDiaRecordatorio"
+        android:id="@+id/tvDiaLabel"
         android:layout_below="@+id/timePicker"
         android:layout_alignParentStart="true"
         android:textStyle="bold"
@@ -77,7 +77,7 @@
         android:layout_height="69dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Fecha"
-        android:id="@+id/tvDia"
+        android:id="@+id/tvDiaInput"
         android:textSize="40dp"
         android:textColor="#999999"
         android:clickable="true"

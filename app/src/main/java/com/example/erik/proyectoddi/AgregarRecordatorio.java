@@ -18,13 +18,38 @@ import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
-public class AgregarRecordatorio extends FragmentActivity implements DatePickerDialog.OnDateSetListener {
+import org.w3c.dom.Text;
+
+import java.util.Calendar;
+
+public class AgregarRecordatorio extends FragmentActivity {
 
     public final static String INFORMACION_RECORDATORIO = "com.example.erik.proyectoddi";
+    public int hour;
+    public int minute;
+    public int year;
+    public int month;
+    public int day;
+    public TextView tvDia;
+    public TextView tvHora;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_recordatorio);
+        Calendar calendar = Calendar.getInstance();
+
+        hour = calendar.get(Calendar.HOUR_OF_DAY);
+        minute = calendar.get(Calendar.MINUTE);
+        year = calendar.get(Calendar.YEAR);
+        month = calendar.get(Calendar.MONTH);
+        day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        tvDia = (TextView) findViewById(R.id.tvDiaInput);
+        tvHora = (TextView) findViewById(R.id.tvHoraInput);
+
+        tvDia.setText(day+"/"+month+"/"+year);
+        tvHora.setText(hour+":"+minute);
     }
 
     @Override
@@ -47,13 +72,13 @@ public class AgregarRecordatorio extends FragmentActivity implements DatePickerD
         String [] parametrosRecordatorio = new String[3];
         //returnIntent.putExtra("result",result);
         EditText etNombreRecordatorio = (EditText) findViewById(R.id.etNombre);
-        TextClock tcHoraRecordatorio = (TextClock) findViewById(R.id.textClock);
-        TextView cvCalendario = (TextView) findViewById(R.id.tvDia);
+        TextView tvHoraRecordatorio = (TextView) findViewById(R.id.tvHoraInput);
+        TextView tvDiaRecordatorio = (TextView) findViewById(R.id.tvDiaInput);
 
 
         parametrosRecordatorio[0] = etNombreRecordatorio.toString();
-        parametrosRecordatorio[1] = tcHoraRecordatorio.getText().toString();
-        parametrosRecordatorio[2] = cvCalendario.toString();
+        parametrosRecordatorio[1] = tvHoraRecordatorio.getText().toString();
+        parametrosRecordatorio[2] = tvDiaRecordatorio.getText().toString();
 
         returnIntent.putExtra(INFORMACION_RECORDATORIO, parametrosRecordatorio);
 
@@ -74,11 +99,6 @@ public class AgregarRecordatorio extends FragmentActivity implements DatePickerD
 
     }
 
-    @Override
-    public void onDateSet(DatePicker view, int year, int month, int day) {
-        //do some stuff for example write on log and update TextField on activity
-        Log.w("DatePicker", "Date = " + year);
-        ((TextView) findViewById(R.id.tvDia)).setText(month+"/"+day);
-    }
+
 
 }
