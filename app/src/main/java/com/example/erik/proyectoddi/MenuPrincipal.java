@@ -62,69 +62,42 @@ public class MenuPrincipal extends AppCompatActivity {
 
     public void setNewParameters(int viewID,LinearLayout l1, LinearLayout l2, LinearLayout l3){
 
-        LinearLayout.LayoutParams parametrosNuevos1 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,0,1);
-        LinearLayout.LayoutParams parametrosNuevos2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,0,2);
-        LinearLayout.LayoutParams parametrosNuevos3 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,0,3);
-        LinearLayout.LayoutParams parametrosNuevos5 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,0,5);
+
         final Handler handler = new Handler();
 
         if(viewID == R.id.botonOpcion1) {
 
-            layout1.setLayoutParams(parametrosNuevos5);
 
-            layout2.setLayoutParams(parametrosNuevos2);
 
-            layout3.setLayoutParams(parametrosNuevos1);
-
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
+       //     handler.postDelayed(new Runnable() {
+          //      @Override
+        //        public void run() {
                     //Do something after 100ms
                     //Iniciar Leer
                     intentActivity(ActividadLeer.class );
 
-                }
-            }, 1000);
+          //      }
+        //    }, 1000);
 
         }else {
             if (viewID == R.id.botonOpcion2) {
 
-
-                layout1.setLayoutParams(parametrosNuevos1);
-
-                layout2.setLayoutParams(parametrosNuevos5);
-
-                layout3.setLayoutParams(parametrosNuevos2);
-
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        //Do something after 100ms
                         //Iniciar Radio
                         intentActivity(ActividadRadio.class);
-                    }
-                }, 1000);
+
 
             } else if (viewID == R.id.botonOpcion3) {
 
 
-                layout1.setLayoutParams(parametrosNuevos1);
-
-
-                layout2.setLayoutParams(parametrosNuevos2);
-
-
-                layout3.setLayoutParams(parametrosNuevos5);
-
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
+               // handler.postDelayed(new Runnable() {
+                //    @Override
+              //      public void run() {
                         //Do something after 100ms
                         //Iniciar Recordatorio
                         intentActivity(ActividadRecordatorio.class);
 
-                    }
-                }, 800);
+                 //   }
+              //  }, 800);
 
             }
         }

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -61,12 +62,13 @@ public class ActividadRecordatorio extends AppCompatActivity {
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        if (requestCode == 1) {
+        if (requestCode == 0) {
             if(resultCode == Activity.RESULT_OK){
                 String [] informacionRecordatorio=data.getStringArrayExtra(AgregarRecordatorio.INFORMACION_RECORDATORIO);
             }
             if (resultCode == Activity.RESULT_CANCELED) {
                 //Write your code if there's no result
+
             }
         }
     }//onActivityResult

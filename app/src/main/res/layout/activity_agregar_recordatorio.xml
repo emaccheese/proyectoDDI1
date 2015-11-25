@@ -31,7 +31,8 @@
         android:capitalize="words"
         android:padding="8dp"
         android:focusable="true"
-        android:height="50dp" />
+        android:height="50dp"
+        android:textColor="#fe010101" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -57,7 +58,8 @@
         android:onClick="showTimePickerDialog"
         android:gravity="center_horizontal"
         android:clickable="true"
-        android:editable="false" />
+        android:editable="false"
+        android:inputType="time"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -82,9 +84,7 @@
         android:textColor="#999999"
         android:clickable="true"
         android:onClick="showDatePickerDialog"
-        android:textColorHint="#ff8e57"
-        android:textIsSelectable="true"
-        android:textColorLink="#59ff44" />
+        android:textIsSelectable="false" />
 
     <LinearLayout
 
@@ -93,15 +93,16 @@
         android:layout_gravity="bottom">
 
         <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/palabraAceptar"
-                android:onClick="regresarRecordatorio"
-                android:textSize="20dp"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp"
-                android:layout_gravity="bottom"
-                />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/palabraAceptar"
+            android:onClick="regresarRecordatorio"
+            android:textSize="35dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:layout_gravity="bottom"
+            android:background="#4588d6"
+            android:textStyle="bold" />
 
         </LinearLayout>
 </LinearLayout>

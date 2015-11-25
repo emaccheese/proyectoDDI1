@@ -3,6 +3,7 @@ package com.example.erik.proyectoddi;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
@@ -20,11 +21,12 @@ import android.widget.TimePicker;
 
 import org.w3c.dom.Text;
 
+import java.text.DateFormat;
 import java.util.Calendar;
 
 public class AgregarRecordatorio extends FragmentActivity {
 
-    public final static String INFORMACION_RECORDATORIO = "com.example.erik.proyectoddi";
+    public final static String INFORMACION_RECORDATORIO = "com.example.erik.proyectoddi.parametrosRecordatorio";
     public int hour;
     public int minute;
     public int year;
@@ -32,6 +34,7 @@ public class AgregarRecordatorio extends FragmentActivity {
     public int day;
     public TextView tvDia;
     public TextView tvHora;
+    public String amPM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,12 +47,15 @@ public class AgregarRecordatorio extends FragmentActivity {
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
-
+        amPM = "am";
+        if(hour>12){
+            hour -=12;
+            amPM = "pm";
+        }
         tvDia = (TextView) findViewById(R.id.tvDiaInput);
         tvHora = (TextView) findViewById(R.id.tvHoraInput);
-
         tvDia.setText(day+"/"+month+"/"+year);
-        tvHora.setText(hour+":"+minute);
+        tvHora.setText(hour+":"+minute+amPM);
     }
 
     @Override
@@ -68,10 +74,10 @@ public class AgregarRecordatorio extends FragmentActivity {
     }
 
     public void regresarRecordatorio(View view){
-        Intent returnIntent = new Intent();
+        final Intent returnIntent = new Intent();
         String [] parametrosRecordatorio = new String[3];
         //returnIntent.putExtra("result",result);
-        EditText etNombreRecordatorio = (EditText) findViewById(R.id.etNombre);
+        EditText etNombreRecordatorio = (EditText) findViewById(R.id.etNombreInput);
         TextView tvHoraRecordatorio = (TextView) findViewById(R.id.tvHoraInput);
         TextView tvDiaRecordatorio = (TextView) findViewById(R.id.tvDiaInput);
 
@@ -82,8 +88,21 @@ public class AgregarRecordatorio extends FragmentActivity {
 
         returnIntent.putExtra(INFORMACION_RECORDATORIO, parametrosRecordatorio);
 
-        setResult(Activity.RESULT_OK, returnIntent);
-        finish();
+        final Handler handler = new Handler();
+
+
+
+
+
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    setResult(Activity.RESULT_OK, returnIntent);
+                    finish();
+
+                }
+            }, 1000);
+
 
     }
 
