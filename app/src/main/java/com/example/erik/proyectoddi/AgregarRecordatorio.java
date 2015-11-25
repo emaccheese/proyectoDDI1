@@ -82,26 +82,16 @@ public class AgregarRecordatorio extends FragmentActivity {
         TextView tvDiaRecordatorio = (TextView) findViewById(R.id.tvDiaInput);
 
 
-        parametrosRecordatorio[0] = etNombreRecordatorio.toString();
+        parametrosRecordatorio[0] = etNombreRecordatorio.getText().toString();
         parametrosRecordatorio[1] = tvHoraRecordatorio.getText().toString();
         parametrosRecordatorio[2] = tvDiaRecordatorio.getText().toString();
 
         returnIntent.putExtra(INFORMACION_RECORDATORIO, parametrosRecordatorio);
 
-        final Handler handler = new Handler();
+        setResult(Activity.RESULT_OK, returnIntent);
+        finish();
 
 
-
-
-
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    setResult(Activity.RESULT_OK, returnIntent);
-                    finish();
-
-                }
-            }, 1000);
 
 
     }

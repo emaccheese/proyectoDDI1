@@ -15,22 +15,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="+"
-        android:onClick="agregarRecordatorio"/>
-    <GridView
-        android:id="@+id/mainGrdiViewRecordatorio"
+        android:onClick="agregarRecordatorio"
+        android:textSize="40dp" />
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:columnWidth="95dp"
-        android:numColumns="auto_fit"
-        android:verticalSpacing="45dp"
-        android:horizontalSpacing="70dp"
-        android:stretchMode="columnWidth"
-        android:layout_gravity="center">
+        android:background="#688cb2">
 
 
-    </GridView>
 
+        <LinearLayout
+            android:id="@+id/linearLayoutRecordatorios"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            >
+        </LinearLayout>
 
+    </ScrollView>
 
 
 </LinearLayout>

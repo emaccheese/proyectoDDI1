@@ -63,21 +63,12 @@ public class MenuPrincipal extends AppCompatActivity {
     public void setNewParameters(int viewID,LinearLayout l1, LinearLayout l2, LinearLayout l3){
 
 
-        final Handler handler = new Handler();
+
 
         if(viewID == R.id.botonOpcion1) {
 
-
-
-       //     handler.postDelayed(new Runnable() {
-          //      @Override
-        //        public void run() {
-                    //Do something after 100ms
-                    //Iniciar Leer
                     intentActivity(ActividadLeer.class );
 
-          //      }
-        //    }, 1000);
 
         }else {
             if (viewID == R.id.botonOpcion2) {
@@ -89,15 +80,8 @@ public class MenuPrincipal extends AppCompatActivity {
             } else if (viewID == R.id.botonOpcion3) {
 
 
-               // handler.postDelayed(new Runnable() {
-                //    @Override
-              //      public void run() {
-                        //Do something after 100ms
-                        //Iniciar Recordatorio
                         intentActivity(ActividadRecordatorio.class);
 
-                 //   }
-              //  }, 800);
 
             }
         }
