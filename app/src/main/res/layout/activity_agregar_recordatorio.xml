@@ -10,7 +10,8 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:text="Nombre"
         android:id="@+id/tvNombreLabel"
@@ -23,20 +24,22 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="3"
         android:id="@+id/etNombreInput"
         android:layout_below="@+id/tvNombreRecordatorio"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:capitalize="words"
-        android:padding="8dp"
+
         android:focusable="true"
         android:height="50dp"
         android:textColor="#fe010101" />
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:text="Hora:"
         android:id="@+id/tvHoraLabel"
@@ -44,17 +47,18 @@
         android:layout_alignParentStart="true"
         android:textStyle="bold"
         android:textColor="#121111"
-        android:paddingBottom="20dp" />
+         />
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="3"
         android:id="@+id/tvHoraInput"
         android:layout_gravity="center_horizontal"
         android:textStyle="italic"
         android:textSize="40dp"
         android:textColor="#540d0d0d"
-        android:paddingBottom="30dp"
+
         android:onClick="showTimePickerDialog"
         android:gravity="center_horizontal"
         android:clickable="true"
@@ -63,7 +67,8 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Dia"
         android:id="@+id/tvDiaLabel"
@@ -72,13 +77,15 @@
         android:textStyle="bold"
         android:textColor="#0f0f0f"
         android:textSize="25dp"
-        android:paddingBottom="20dp" />
+         />
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="69dp"
+        android:layout_height="0dp"
+        android:layout_weight="3"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Fecha"
+        android:gravity="center"
         android:id="@+id/tvDiaInput"
         android:textSize="40dp"
         android:textColor="#999999"
@@ -86,23 +93,16 @@
         android:onClick="showDatePickerDialog"
         android:textIsSelectable="false" />
 
-    <LinearLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="bottom">
-
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="2"
             android:text="@string/palabraAceptar"
             android:onClick="regresarRecordatorio"
             android:textSize="35dp"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
             android:layout_gravity="bottom"
             android:background="#4588d6"
             android:textStyle="bold" />
 
-        </LinearLayout>
+
 </LinearLayout>

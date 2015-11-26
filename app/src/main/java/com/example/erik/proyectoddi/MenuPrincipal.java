@@ -62,31 +62,19 @@ public class MenuPrincipal extends AppCompatActivity {
 
     public void setNewParameters(int viewID,LinearLayout l1, LinearLayout l2, LinearLayout l3){
 
-
-
-
         if(viewID == R.id.botonOpcion1) {
 
                     intentActivity(ActividadLeer.class );
-
-
         }else {
             if (viewID == R.id.botonOpcion2) {
 
                         //Iniciar Radio
                         intentActivity(ActividadRadio.class);
-
-
             } else if (viewID == R.id.botonOpcion3) {
 
-
                         intentActivity(ActividadRecordatorio.class);
-
-
             }
         }
-
-
     }
 
     public void intentActivity(Class x){

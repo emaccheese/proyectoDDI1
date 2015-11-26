@@ -54,8 +54,10 @@ public class AgregarRecordatorio extends FragmentActivity {
         }
         tvDia = (TextView) findViewById(R.id.tvDiaInput);
         tvHora = (TextView) findViewById(R.id.tvHoraInput);
+
         tvDia.setText(day+"/"+month+"/"+year);
         tvHora.setText(hour+":"+minute+amPM);
+
     }
 
     @Override
@@ -69,7 +71,6 @@ public class AgregarRecordatorio extends FragmentActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -81,7 +82,6 @@ public class AgregarRecordatorio extends FragmentActivity {
         TextView tvHoraRecordatorio = (TextView) findViewById(R.id.tvHoraInput);
         TextView tvDiaRecordatorio = (TextView) findViewById(R.id.tvDiaInput);
 
-
         parametrosRecordatorio[0] = etNombreRecordatorio.getText().toString();
         parametrosRecordatorio[1] = tvHoraRecordatorio.getText().toString();
         parametrosRecordatorio[2] = tvDiaRecordatorio.getText().toString();
@@ -90,22 +90,16 @@ public class AgregarRecordatorio extends FragmentActivity {
 
         setResult(Activity.RESULT_OK, returnIntent);
         finish();
-
-
-
-
     }
 
     public void showTimePickerDialog(View v) {
         DialogFragment newFragment = new TimePickerFragment();
         newFragment.show(getSupportFragmentManager(), "timePicker");
-
     }
 
     public void showDatePickerDialog(View v) {
         DialogFragment newFragment = new DatePickerFragment();
         newFragment.show(getSupportFragmentManager(), "datePicker");
-
     }
 
 

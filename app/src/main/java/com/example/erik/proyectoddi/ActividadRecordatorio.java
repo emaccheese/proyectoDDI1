@@ -24,6 +24,7 @@ public class ActividadRecordatorio extends AppCompatActivity {
     private Context mContext;
     static final int DETALLES_RECORDATORIO_REQUEST = 0;
     public LinearLayout linearLayoutRecordatorio;
+    public final static String LISTA_PARAMETROS = "com.example.erik.proyectoddi.LISTA_PARAMETROS";
 
 
 
@@ -94,16 +95,20 @@ public class ActividadRecordatorio extends AppCompatActivity {
 
         final LinearLayout.LayoutParams lparams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         final TextView textView = new TextView(this);
+        final Intent intent = new Intent(this, EditarRecordatorio.class);
+
         textView.setLayoutParams(lparams);
         textView.setTextColor(Color.BLACK);
         textView.setTextSize(35);
-        if(listaParametros[0]=="") listaParametros[0]= "Sin Nombre";
+        if(listaParametros[0].equals("")) listaParametros[0]= "Sin Nombre";
         textView.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 // do you work here
                 //Toast.makeText(ActividadRecordatorio.this, listaParametros[1], Toast.LENGTH_LONG).show();
+                intent.putExtra(LISTA_PARAMETROS,listaParametros);
+                startActivityForResult(intent, DETALLES_RECORDATORIO_REQUEST);
             }
         });
 

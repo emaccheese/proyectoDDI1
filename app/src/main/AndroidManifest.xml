@@ -9,7 +9,6 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MenuPrincipal"
-
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,6 +43,14 @@
         <activity
             android:name=".AgregarRecordatorio"
             android:label="@string/title_activity_agregar_recordatorio"
+            android:parentActivityName=".ActividadRecordatorio" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.erik.proyectoddi.ActividadRecordatorio" />
+        </activity>
+        <activity
+            android:name=".EditarRecordatorio"
+            android:label="@string/title_activity_editar_recordatorio"
             android:parentActivityName=".ActividadRecordatorio" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

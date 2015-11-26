@@ -24,7 +24,6 @@ public class TimePickerFragment extends DialogFragment
         final Calendar c = Calendar.getInstance();
         int hour = c.get(Calendar.HOUR_OF_DAY);
         int minute = c.get(Calendar.MINUTE);
-
         // Create a new instance of TimePickerDialog and return it
         return new TimePickerDialog(getActivity(), this, hour, minute,
                 DateFormat.is24HourFormat(getActivity()));
@@ -42,4 +41,5 @@ public class TimePickerFragment extends DialogFragment
         ((TextView)getActivity().findViewById(R.id.tvHoraInput)).setText(horaEscojida);
         ((TextView)getActivity().findViewById(R.id.tvHoraInput)).setTextColor(Color.BLUE);
     }
+
 }
